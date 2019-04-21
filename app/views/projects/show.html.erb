@@ -1,0 +1,91 @@
+<div class="container">
+
+<p>
+  <strong>Project title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Project summary:</strong>
+  <%= @project.text %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @project.sdate %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @project.edate %>
+</p>
+
+
+<h2>Tasks</h2>
+<% @project.tasks.each do |task| %>
+  <p>
+    <strong>Task name:</strong>
+    <%= task.name %>
+  </p>
+
+  <p>
+    <strong>Task description:</strong>
+    <%= task.description %>
+  </p>
+
+  <p>
+    <strong>Task status:</strong>
+    <%= task.status %>
+  </p>
+
+  <p>
+    <strong>Appointed employees:</strong>
+    <%= task.employee %>
+  </p>
+
+<% end %>
+
+<div class="form-group">
+<h2> Add task</h2>
+<%= form_with(model: [ @project, @project.tasks.build ], local: true) do |form| %>
+
+		<p>
+			<%= form.label :task %><br>
+			<%= form.text_field :name %>
+		</p>
+		<p>
+			<%= form.label :description %><br>
+			<%= form.text_area :description %>
+		</p>
+
+
+		<p>
+			<%= form.radio_button :status, "New" %>
+			<%= form.label :status, "New" %>
+			<%= form.radio_button :status, "In progress" %>
+			<%= form.label :status , "In progress" %>
+			<%= form.radio_button :status, "Done" %>
+			<%= form.label :status, "Done" %>
+
+		</p>
+
+	<h4>Employee</h4>
+		<p>
+
+			<%= form.label :employee %><br>
+			<%= form.text_area :employee %>
+		</p>
+</div>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+
+
+<button type="button" class="btn btn-link"><%= link_to 'Edit', edit_project_path(@project) %></button>
+<button type="button" class="btn btn-link"><%= link_to 'Back', projects_path %></button>
+</div>
