@@ -1,0 +1,33 @@
+<div class="form-group">
+	<%= form_with(model: [ @project, @project.tasks.build ], local: true) do |form| %>
+
+		<p>
+			<%= form.label :task %><br>
+			<%= form.text_field :name %>
+		</p>
+		<p>
+			<%= form.label :description %><br>
+			<%= form.text_area :description %>
+		</p>
+
+		<p>
+			<%= form.radio_button :status, "New" %>
+			<%= form.label :status, "New" %>
+			<%= form.radio_button :status, "In progress" %>
+			<%= form.label :status , "In progress" %>
+			<%= form.radio_button :status, "Done" %>
+			<%= form.label :status, "Done" %>
+		</p>
+
+		
+		<p>
+			<%= form.label :employee %><br>
+			<%= form.text_area :employee %>
+		</p>
+
+		<p>
+		    <%= form.submit %>
+		</p>
+			
+	<% end %>
+</div>

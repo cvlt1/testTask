@@ -1,47 +1,5 @@
-<h1>Editing project</h1>
-
-
-<%= form_with(model: @project, local: true) do |form| %>
-  
-
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@project.errors.count, "error") %> prohibited
-        this project from being saved:
-      </h2>
-      <ul>
-        <% @project.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-
-
-
-  <p>
-    <%= form.label :project_name %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :project_summary %><br>
-    <%= form.text_area :text %>
-  </p>
-
-    <%= form.label :project_start_date %><br>
-    <%= form.date_field :sdate %><br>
-
-    <%= form.label :project_end_date %><br>
-    <%= form.date_field :edate %><br>
-
-
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="container">
+	<h1>Editing project</h1>
+	<%= render 'form' %>
+	<%= link_to 'Back', projects_path %>
+</div>
