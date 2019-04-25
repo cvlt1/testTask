@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Variable name explanation
 
-Things you may want to cover:
+title - title of project
+text - summary of project
+sdate - day when project was started
+edate - day when project should be ended 
 
-* Ruby version
+name - name of project's task
+description - description of the project's tasks
+status - this variable show status of project "new", "in progress", etc.
+employee - field, where we can add appointed employees fo project's tasks
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
